@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Cardinity_Payment>
+            <version>1.0.4</version>
+        </Cardinity_Payment>
+    </modules>
+    <global>
+        <models>
+            <cardinity>
+                <class>Cardinity_Payment_Model_Cardinity</class>
+            </cardinity>
+        </models>
+        <blocks>
+            <cardinity>
+                <class>Cardinity_Payment_Block_Auth</class>
+            </cardinity>
+        </blocks>
+    </global>
+    <default>
+        <payment>
+            <cardinity>
+                <!-- by default this payment method is inactive -->
+                <active>1</active>
+                <!-- model to handle logic for this payment method -->
+                <model>Cardinity_Payment_Model_Cardinity</model>
+                <!-- order status for new orders paid by this payment method -->
+                <order_status>Processing</order_status>
+                <!-- default title for payment checkout page and order view page -->
+                <title>Credit Card Payment</title>
+                <cctypes>VI,MC</cctypes>
+                <payment_action>authorize_capture</payment_action>
+                <allowspecific>0</allowspecific>
+            </cardinity>
+        </payment>
+    </default>
+    <frontend>
+        <routers>
+            <cardinity>
+                <use>standard</use>
+                <args>
+                    <module>Cardinity_Payment</module>
+                    <frontName>cardinity</frontName>
+                </args>
+            </cardinity>
+        </routers>
+        <translate>
+            <modules>
+                <Cardinity_Payment>
+                    <files>
+                        <default>Cardinity_Payment.csv</default>
+                    </files>
+                </Cardinity_Payment>
+            </modules>
+        </translate>
+    </frontend>
+</config>

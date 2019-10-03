@@ -1,16 +1,19 @@
 {
-    "name": "OpenMageModuleFostering/Cardinity",
+    "name": "OpenMageModuleFostering\/Cardinity",
     "type": "magento-module",
     "license": "MIT",
     "homepage": "",
     "description": "Module for accepting credit card payments using cardinity.com",
     "authors": [
-    {
-        "name": "Cardinity",
-        "email": "info@cardinity.com"
-    }
-],
+        {
+            "name": "Cardinity",
+            "email": "info@cardinity.com"
+        }
+    ],
     "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+        "magento-hackathon\/magento-composer-installer": "*"
+    },
+    "keywords": [
+        "openmage-module"
+    ]
 }
